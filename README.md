@@ -1,16 +1,32 @@
-## Hi there 👋
+# Hi 👋 I'm Gokul Rathod
 
-<!--
-**g2rindian2005-cyber/g2rindian2005-cyber** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 🚀 About Me
+DevOps & Cloud Engineer | AWS | Terraform | Docker | Kubernetes
 
-Here are some ideas to get you started:
+## 🌱 Currently Learning
+- Kubernetes
+- GitHub Actions
+- Jenkins
+- ArgoCD
+- Monitoring
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🛠️ Skills
+- AWS
+- Terraform
+- Docker
+- Kubernetes
+- Linux
+- Git & GitHub
+- Jenkins
+- Ansible
+- Prometheus
+- Grafana
+
+## 📂 Projects
+- E-Commerce Microservices on Kubernetes
+- Car Parking Microservices
+- AWS Infrastructure with Terraform
+
+## 📫 Connect With Me
+- LinkedIn: https://linkedin.com/in/your-profile
+- Portfolio: https://your-portfolio.com
