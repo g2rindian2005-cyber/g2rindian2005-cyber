@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=Gokul%20Rathod&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=DevOps%20%26%20Cloud%20Engineer&descAlignY=55&descSize=20" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF512F,25:F09819,50:8E2DE2,75:4A00E0,100:00C9FF&height=220&section=header&text=Gokul%20Rathod&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=DevOps%20%26%20Cloud%20Engineer&descAlignY=58&descSize=20" width="100%"/>
 
 # Hi there, I'm Gokul Rathod 👋
 
@@ -11,7 +11,9 @@
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
 </a>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=58A6FF&center=true&vCenter=true&width=600&lines=Cloud+%26+DevOps+Engineer;AWS+%7C+Terraform+%7C+Docker+%7C+Kubernetes;CI%2FCD+%7C+GitOps+%7C+Infrastructure+as+Code;Turning+Infra+into+Code%2C+one+pipeline+at+a+time." alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=F09819&center=true&vCenter=true&width=600&lines=Cloud+%26+DevOps+Engineer;AWS+%7C+Terraform+%7C+Docker+%7C+Kubernetes;CI%2FCD+%7C+GitOps+%7C+Infrastructure+as+Code;Turning+Infra+into+Code%2C+one+pipeline+at+a+time." alt="Typing SVG" />
+
+![](https://img.shields.io/badge/-%F0%9F%94%A5%20Open%20to%20Work-FF512F?style=for-the-badge)
 
 </div>
 
@@ -33,11 +35,11 @@ fun_fact: I automate things so I don't have to click them twice 🔁
 
 <div align="center">
 
-![Kubernetes](https://img.shields.io/badge/Kubernetes-Deep%20Dive-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Jenkins](https://img.shields.io/badge/Jenkins-Pipelines-D24939?style=flat-square&logo=jenkins&logoColor=white)
-![ArgoCD](https://img.shields.io/badge/ArgoCD-GitOps-EF7B4D?style=flat-square&logo=argo&logoColor=white)
-![Monitoring](https://img.shields.io/badge/Monitoring-Prometheus%20%26%20Grafana-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Deep%20Dive-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-Pipelines-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
+![ArgoCD](https://img.shields.io/badge/ArgoCD-GitOps-EF7B4D?style=for-the-badge&logo=argo&logoColor=white)
+![Monitoring](https://img.shields.io/badge/Monitoring-Prometheus%20%26%20Grafana-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
 
 </div>
 
@@ -80,7 +82,7 @@ fun_fact: I automate things so I don't have to click them twice 🔁
 <div align="center">
 
 <a href="https://github.com/g2rindian2005-cyber">
-<img width="410" src="https://github-readme-stats.vercel.app/api/pin/?username=g2rindian2005-cyber&repo=Cloud-native-ecommarce-app-main&theme=tokyonight&hide_border=true" />
+<img width="410" src="https://github-readme-stats.vercel.app/api/pin/?username=g2rindian2005-cyber&repo=Cloud-native-ecommarce-app-main&theme=radical&hide_border=true" />
 </a>
 
 </div>
@@ -97,10 +99,12 @@ fun_fact: I automate things so I don't have to click them twice 🔁
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=g2rindian2005-cyber&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=g2rindian2005-cyber&layout=compact&theme=tokyonight&hide_border=true" />
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=g2rindian2005-cyber&show_icons=true&theme=radical&hide_border=true&count_private=true" />
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=g2rindian2005-cyber&layout=compact&theme=radical&hide_border=true" />
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=g2rindian2005-cyber&theme=tokyonight&hide_border=true" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=g2rindian2005-cyber&theme=radical&hide_border=true" />
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=g2rindian2005-cyber&theme=react-dark&hide_border=true" width="95%"/>
 
 </div>
 
@@ -119,8 +123,8 @@ fun_fact: I automate things so I don't have to click them twice 🔁
 
 <br><br>
 
-![Profile Views](https://komarev.com/ghpvc/?username=g2rindian2005-cyber&color=blueviolet&style=for-the-badge&label=PROFILE+VIEWS)
+![Profile Views](https://komarev.com/ghpvc/?username=g2rindian2005-cyber&color=FF512F&style=for-the-badge&label=PROFILE+VIEWS)
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C9FF,25:4A00E0,50:8E2DE2,75:F09819,100:FF512F&height=120&section=footer" width="100%"/>
