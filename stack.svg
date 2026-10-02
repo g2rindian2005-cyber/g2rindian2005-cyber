@@ -1,0 +1,300 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" width="100%" height="100%">
+  <defs>
+    <!-- Aurora Gradients -->
+    <linearGradient id="stack-aurora" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <linearGradient id="stack-card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f111a" />
+      <stop offset="100%" stop-color="#090a10" />
+    </linearGradient>
+
+    <linearGradient id="stack-card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.7" />
+      <stop offset="40%" stop-color="#a78bfa" stop-opacity="0.3" />
+      <stop offset="80%" stop-color="#f472b6" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.4" />
+    </linearGradient>
+
+    <pattern id="stack-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#ffffff" fill-opacity="0.04" />
+    </pattern>
+
+    <filter id="core-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="soft-chip-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      /* Rotation Animations for Orbits */
+      @keyframes orbitInner {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes orbitMiddle {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      @keyframes orbitOuter {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes moonOrbit {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      .orbit-group-1 { transform-origin: 215px 235px; animation: orbitInner 20s linear infinite; }
+      .orbit-group-2 { transform-origin: 215px 235px; animation: orbitMiddle 28s linear infinite; }
+      .orbit-group-3 { transform-origin: 215px 235px; animation: orbitOuter 36s linear infinite; }
+      .k8s-moon-system { transform-origin: 0px 0px; animation: moonOrbit 6s linear infinite; }
+
+      /* Sequential Chip Border Glow */
+      @keyframes chipGlow1 {
+        0%, 100% { border-color: #334155; stroke: #334155; }
+        25% { stroke: #22d3ee; }
+      }
+      @keyframes chipGlow2 {
+        0%, 100% { stroke: #334155; }
+        50% { stroke: #a78bfa; }
+      }
+      @keyframes chipGlow3 {
+        0%, 100% { stroke: #334155; }
+        75% { stroke: #f472b6; }
+      }
+      .chip-glow-c { animation: chipGlow1 4s ease-in-out infinite; }
+      .chip-glow-v { animation: chipGlow2 4s ease-in-out infinite; }
+      .chip-glow-p { animation: chipGlow3 4s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect x="2" y="2" width="896" height="456" rx="16" fill="url(#stack-card-bg)" stroke="url(#stack-card-border)" stroke-width="1.5" />
+  <rect x="2" y="2" width="896" height="456" rx="16" fill="url(#stack-dots)" />
+
+  <!-- Section Header -->
+  <g transform="translate(36, 32)">
+    <text x="0" y="0" fill="url(#stack-aurora)" font-size="18" font-weight="900" class="sans" letter-spacing="1">
+      TECH STACK &amp; ORBITING ECOSYSTEM
+    </text>
+    <text x="0" y="18" fill="#94a3b8" font-size="11.5" class="mono">
+      // ATOMIC ORBITING CLOUD ARCHITECTURE + CATEGORIZED TOOLING
+    </text>
+  </g>
+
+  <!-- ================= LEFT: 3-TIER ORBITING ATOM SYSTEM ================= -->
+  <g id="planetary-system" transform="translate(0, 0)">
+    <!-- Orbit Ellipse 1 (Inner, Tilted 25deg) -->
+    <ellipse cx="215" cy="235" rx="88" ry="46" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4 4" stroke-opacity="0.35" transform="rotate(-20 215 235)" />
+    
+    <!-- Orbit Ellipse 2 (Middle, Tilted -35deg) -->
+    <ellipse cx="215" cy="235" rx="130" ry="62" fill="none" stroke="#a78bfa" stroke-width="1" stroke-dasharray="6 4" stroke-opacity="0.3" transform="rotate(35 215 235)" />
+    
+    <!-- Orbit Ellipse 3 (Outer, Tilted 75deg) -->
+    <ellipse cx="215" cy="235" rx="172" ry="76" fill="none" stroke="#f472b6" stroke-width="1" stroke-dasharray="8 6" stroke-opacity="0.25" transform="rotate(-70 215 235)" />
+
+    <!-- CENTER CORE: AWS CLOUD NUCLEUS -->
+    <g transform="translate(215, 235)">
+      <!-- Pulsing Aura -->
+      <circle cx="0" cy="0" r="32" fill="#ff9900" fill-opacity="0.15" filter="url(#core-glow)">
+        <animate attributeName="r" values="30;36;30" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="fill-opacity" values="0.12;0.25;0.12" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="0" cy="0" r="26" fill="#181308" stroke="#f59e0b" stroke-width="1.8" />
+      <text x="0" y="-3" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="900" class="mono">AWS</text>
+      <text x="0" y="9" text-anchor="middle" fill="#fbbf24" font-size="7.5" font-weight="700" class="mono">CORE</text>
+    </g>
+
+    <!-- ORBIT 1 LAYER (Inner Orbit: Kubernetes with Helm & ArgoCD Moons!) -->
+    <g class="orbit-group-1">
+      <!-- Planet: Kubernetes (at x=215+85=300, y=235) -->
+      <g transform="translate(300, 235)">
+        <circle cx="0" cy="0" r="16" fill="#1e1b4b" stroke="#38bdf8" stroke-width="1.4" />
+        <text x="0" y="3.5" text-anchor="middle" fill="#38bdf8" font-size="8" font-weight="800" class="mono">K8s</text>
+
+        <!-- MOON SYSTEM: Helm & ArgoCD orbiting K8s! -->
+        <g class="k8s-moon-system">
+          <!-- Moon 1: Helm -->
+          <g transform="translate(25, 0)">
+            <circle cx="0" cy="0" r="7" fill="#0c4a6e" stroke="#0284c7" stroke-width="0.8" />
+            <text x="0" y="2" text-anchor="middle" fill="#bae6fd" font-size="5" font-weight="700" class="mono">H</text>
+          </g>
+          <!-- Moon 2: ArgoCD -->
+          <g transform="translate(-25, 0)">
+            <circle cx="0" cy="0" r="7" fill="#4c0519" stroke="#f43f5e" stroke-width="0.8" />
+            <text x="0" y="2" text-anchor="middle" fill="#fecdd3" font-size="5" font-weight="700" class="mono">A</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Counter-Planet: Docker -->
+      <g transform="translate(130, 235)">
+        <circle cx="0" cy="0" r="15" fill="#082f49" stroke="#0284c7" stroke-width="1.3" />
+        <text x="0" y="3.5" text-anchor="middle" fill="#38bdf8" font-size="7.5" font-weight="800" class="mono">Docker</text>
+      </g>
+    </g>
+
+    <!-- ORBIT 2 LAYER (Middle Orbit: Terraform & GitHub Actions) -->
+    <g class="orbit-group-2">
+      <!-- Planet: Terraform -->
+      <g transform="translate(215, 110)">
+        <circle cx="0" cy="0" r="17" fill="#2e1065" stroke="#a855f7" stroke-width="1.4" />
+        <text x="0" y="3.5" text-anchor="middle" fill="#d8b4fe" font-size="7.5" font-weight="800" class="mono">Terraform</text>
+      </g>
+
+      <!-- Planet: GitHub Actions -->
+      <g transform="translate(215, 360)">
+        <circle cx="0" cy="0" r="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1.3" />
+        <text x="0" y="3.5" text-anchor="middle" fill="#f1f5f9" font-size="7.5" font-weight="800" class="mono">Actions</text>
+      </g>
+    </g>
+
+    <!-- ORBIT 3 LAYER (Outer Orbit: Prometheus, Linux, Jenkins) -->
+    <g class="orbit-group-3">
+      <!-- Planet: Prometheus -->
+      <g transform="translate(60, 235)">
+        <circle cx="0" cy="0" r="15" fill="#450a0a" stroke="#ef4444" stroke-width="1.2" />
+        <text x="0" y="3.5" text-anchor="middle" fill="#fca5a5" font-size="7" font-weight="800" class="mono">Prom</text>
+      </g>
+
+      <!-- Planet: Linux -->
+      <g transform="translate(370, 235)">
+        <circle cx="0" cy="0" r="15" fill="#172554" stroke="#eab308" stroke-width="1.2" />
+        <text x="0" y="3.5" text-anchor="middle" fill="#fef08a" font-size="7" font-weight="800" class="mono">Linux</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT: GROUPED CHIP GRID ================= -->
+  <g transform="translate(435, 75)">
+    <!-- Category 1: Cloud & Infrastructure as Code -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="10" fill="#22d3ee" font-size="11" font-weight="700" letter-spacing="1" class="mono">
+        01 // CLOUD PLATFORMS &amp; IAC
+      </text>
+      <g transform="translate(0, 20)">
+        <!-- Chip 1: AWS -->
+        <rect x="0" y="0" width="82" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="41" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">AWS Cloud</text>
+
+        <!-- Chip 2: EKS -->
+        <rect x="90" y="0" width="76" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="128" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">AWS EKS</text>
+
+        <!-- Chip 3: Terraform -->
+        <rect x="174" y="0" width="84" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="216" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">Terraform</text>
+
+        <!-- Chip 4: CloudFormation -->
+        <rect x="266" y="0" width="108" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="320" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="600" class="sans">CloudFormation</text>
+
+        <!-- Chip 5: Ansible -->
+        <rect x="382" y="0" width="60" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="412" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">Ansible</text>
+      </g>
+    </g>
+
+    <!-- Category 2: Containers & Orchestration -->
+    <g transform="translate(0, 85)">
+      <text x="0" y="10" fill="#a78bfa" font-size="11" font-weight="700" letter-spacing="1" class="mono">
+        02 // CONTAINERS &amp; ORCHESTRATION
+      </text>
+      <g transform="translate(0, 20)">
+        <!-- Chip 1: Docker -->
+        <rect x="0" y="0" width="75" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-v" />
+        <text x="37" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">Docker</text>
+
+        <!-- Chip 2: Kubernetes -->
+        <rect x="83" y="0" width="94" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-v" />
+        <text x="130" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">Kubernetes</text>
+
+        <!-- Chip 3: Helm -->
+        <rect x="185" y="0" width="68" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-v" />
+        <text x="219" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">Helm</text>
+
+        <!-- Chip 4: ArgoCD -->
+        <rect x="261" y="0" width="80" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-v" />
+        <text x="301" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">ArgoCD</text>
+
+        <!-- Chip 5: Microservices -->
+        <rect x="349" y="0" width="93" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-v" />
+        <text x="395" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="600" class="sans">Microservices</text>
+      </g>
+    </g>
+
+    <!-- Category 3: CI/CD & Automation -->
+    <g transform="translate(0, 170)">
+      <text x="0" y="10" fill="#f472b6" font-size="11" font-weight="700" letter-spacing="1" class="mono">
+        03 // CI/CD &amp; AUTOMATION
+      </text>
+      <g transform="translate(0, 20)">
+        <!-- Chip 1: GitHub Actions -->
+        <rect x="0" y="0" width="115" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-p" />
+        <text x="57" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">GitHub Actions</text>
+
+        <!-- Chip 2: Jenkins -->
+        <rect x="123" y="0" width="76" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-p" />
+        <text x="161" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">Jenkins</text>
+
+        <!-- Chip 3: GitOps -->
+        <rect x="207" y="0" width="72" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-p" />
+        <text x="243" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">GitOps</text>
+
+        <!-- Chip 4: Git & GitHub -->
+        <rect x="287" y="0" width="95" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-p" />
+        <text x="334" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="600" class="sans">Git / Pull Req</text>
+
+        <!-- Chip 5: Shell -->
+        <rect x="390" y="0" width="52" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-p" />
+        <text x="416" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="600" class="sans">Bash</text>
+      </g>
+    </g>
+
+    <!-- Category 4: Observability & Operating Systems -->
+    <g transform="translate(0, 255)">
+      <text x="0" y="10" fill="#38bdf8" font-size="11" font-weight="700" letter-spacing="1" class="mono">
+        04 // OBSERVABILITY &amp; LINUX
+      </text>
+      <g transform="translate(0, 20)">
+        <!-- Chip 1: AWS CloudWatch -->
+        <rect x="0" y="0" width="124" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="62" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">AWS CloudWatch</text>
+
+        <!-- Chip 2: Prometheus -->
+        <rect x="132" y="0" width="96" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="180" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">Prometheus</text>
+
+        <!-- Chip 3: Grafana -->
+        <rect x="236" y="0" width="76" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="274" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="sans">Grafana</text>
+
+        <!-- Chip 4: Linux Admin -->
+        <rect x="320" y="0" width="122" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" class="chip-glow-c" />
+        <text x="381" y="18" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="600" class="sans">Linux Admin &amp; Net</text>
+      </g>
+    </g>
+
+    <!-- Bottom Footnote -->
+    <text x="0" y="338" fill="#64748b" font-size="10" class="mono">
+      ⚡ ARCHITECTURE PATTERN: HIGH AVAILABILITY • GITOPS • ZERO-DOWNTIME
+    </text>
+  </g>
+</svg>

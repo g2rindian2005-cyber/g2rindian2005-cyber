@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" width="100%" height="100%">
+  <defs>
+    <!-- Linear Gradients -->
+    <linearGradient id="about-aurora" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <linearGradient id="about-card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f111a" />
+      <stop offset="100%" stop-color="#090a10" />
+    </linearGradient>
+
+    <linearGradient id="about-card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Ring Gradients -->
+    <linearGradient id="ring-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="ring-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="ring-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <pattern id="about-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity="0.04" />
+    </pattern>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      /* Daily Rings Animation */
+      @keyframes fillRing1 {
+        0% { stroke-dashoffset: 280; }
+        50% { stroke-dashoffset: 20; }
+        100% { stroke-dashoffset: 20; }
+      }
+      @keyframes fillRing2 {
+        0% { stroke-dashoffset: 220; }
+        50% { stroke-dashoffset: 15; }
+        100% { stroke-dashoffset: 15; }
+      }
+      @keyframes fillRing3 {
+        0% { stroke-dashoffset: 160; }
+        50% { stroke-dashoffset: 10; }
+        100% { stroke-dashoffset: 10; }
+      }
+      .ring-progress-1 { stroke-dasharray: 280; animation: fillRing1 6s ease-in-out infinite alternate; }
+      .ring-progress-2 { stroke-dasharray: 220; animation: fillRing2 6s ease-in-out infinite alternate; }
+      .ring-progress-3 { stroke-dasharray: 160; animation: fillRing3 6s ease-in-out infinite alternate; }
+    </style>
+  </defs>
+
+  <!-- ================= LEFT PANEL: WHAT I BUILD & AUTOMATE ================= -->
+  <g transform="translate(0, 0)">
+    <!-- Main Card Body -->
+    <rect x="2" y="2" width="438" height="366" rx="16" fill="url(#about-card-bg)" stroke="url(#about-card-border)" stroke-width="1.4" />
+    <rect x="2" y="2" width="438" height="366" rx="16" fill="url(#about-dots)" />
+
+    <!-- Browser Chrome Header Bar -->
+    <rect x="2" y="2" width="438" height="36" rx="16" fill="#131722" />
+    <rect x="2" y="24" width="438" height="14" fill="#131722" />
+    <line x1="2" y1="38" x2="440" y2="38" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Browser Window Controls -->
+    <circle cx="22" cy="20" r="4.5" fill="#f43f5e" />
+    <circle cx="36" cy="20" r="4.5" fill="#fbbf24" />
+    <circle cx="50" cy="20" r="4.5" fill="#10b981" />
+
+    <!-- URL Bar -->
+    <rect x="72" y="11" width="345" height="18" rx="5" fill="#090a10" stroke="#334155" stroke-width="0.8" />
+    <text x="82" y="23.5" fill="#64748b" font-size="9" class="mono">🔒 https://cloud.gokul.dev/architecture</text>
+
+    <!-- Card Title -->
+    <text x="24" y="68" fill="url(#about-aurora)" font-size="16" font-weight="800" class="sans" letter-spacing="0.5">
+      WHAT I BUILD &amp; AUTOMATE
+    </text>
+    <text x="24" y="85" fill="#94a3b8" font-size="11" class="sans">
+      Enterprise cloud infrastructure, automated pipelines &amp; microservices
+    </text>
+
+    <!-- Capability Row 1: Cloud & Containers -->
+    <g transform="translate(24, 102)">
+      <rect x="0" y="0" width="392" height="54" rx="8" fill="#111827" fill-opacity="0.7" stroke="#1e293b" stroke-width="1" />
+      <!-- Icon Box -->
+      <rect x="10" y="9" width="36" height="36" rx="6" fill="#082f49" stroke="#0284c7" stroke-width="1" />
+      <text x="28" y="32" text-anchor="middle" font-size="16">☁️</text>
+      <!-- Texts -->
+      <text x="56" y="24" fill="#f1f5f9" font-size="12" font-weight="700" class="sans">Cloud Platforms &amp; Containers</text>
+      <text x="56" y="39" fill="#94a3b8" font-size="10.5" class="sans">AWS (EC2, S3, RDS, VPC, EKS), Docker, Kubernetes</text>
+    </g>
+
+    <!-- Capability Row 2: GitOps & CI/CD -->
+    <g transform="translate(24, 166)">
+      <rect x="0" y="0" width="392" height="54" rx="8" fill="#111827" fill-opacity="0.7" stroke="#1e293b" stroke-width="1" />
+      <!-- Icon Box -->
+      <rect x="10" y="9" width="36" height="36" rx="6" fill="#2e1065" stroke="#7c3aed" stroke-width="1" />
+      <text x="28" y="32" text-anchor="middle" font-size="16">🚀</text>
+      <!-- Texts -->
+      <text x="56" y="24" fill="#f1f5f9" font-size="12" font-weight="700" class="sans">GitOps &amp; Continuous Delivery</text>
+      <text x="56" y="39" fill="#94a3b8" font-size="10.5" class="sans">GitHub Actions, Jenkins, Helm charts, ArgoCD sync</text>
+    </g>
+
+    <!-- Capability Row 3: IaC & Observability -->
+    <g transform="translate(24, 230)">
+      <rect x="0" y="0" width="392" height="54" rx="8" fill="#111827" fill-opacity="0.7" stroke="#1e293b" stroke-width="1" />
+      <!-- Icon Box -->
+      <rect x="10" y="9" width="36" height="36" rx="6" fill="#311425" stroke="#db2777" stroke-width="1" />
+      <text x="28" y="32" text-anchor="middle" font-size="16">📊</text>
+      <!-- Texts -->
+      <text x="56" y="24" fill="#f1f5f9" font-size="12" font-weight="700" class="sans">IaC &amp; Real-Time Observability</text>
+      <text x="56" y="39" fill="#94a3b8" font-size="10.5" class="sans">Terraform, Ansible, CloudWatch, Prometheus, Grafana</text>
+    </g>
+
+    <!-- Live Terminal Status at Bottom -->
+    <g transform="translate(24, 296)">
+      <rect x="0" y="0" width="392" height="56" rx="8" fill="#090a10" stroke="#1e293b" stroke-width="1" />
+      <text x="12" y="22" fill="#38bdf8" font-size="10.5" font-weight="600" class="mono">gokul@aws-eks:~$</text>
+      <text x="142" y="22" fill="#f8fafc" font-size="10.5" class="mono">terraform apply -auto-approve</text>
+      <text x="12" y="42" fill="#10b981" font-size="10" font-weight="700" class="mono">Apply complete! Resources: 14 added, 0 failed.</text>
+      <!-- Blinking block cursor -->
+      <rect x="365" y="32" width="6" height="12" fill="#22d3ee">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+      </rect>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT PANEL: JOURNEY, MENTORSHIP & HIGHLIGHTS ================= -->
+  <g transform="translate(460, 0)">
+    <!-- Main Card Body -->
+    <rect x="2" y="2" width="438" height="366" rx="16" fill="url(#about-card-bg)" stroke="url(#about-card-border)" stroke-width="1.4" />
+    <rect x="2" y="2" width="438" height="366" rx="16" fill="url(#about-dots)" />
+
+    <!-- Story / Segment Progress Bars Header -->
+    <g transform="translate(24, 18)">
+      <!-- Segment 1 -->
+      <rect x="0" y="0" width="124" height="3.5" rx="2" fill="#1e293b" />
+      <rect x="0" y="0" width="0" height="3.5" rx="2" fill="#22d3ee">
+        <animate attributeName="width" values="0;124;124;0" keyTimes="0;0.3;0.95;1" dur="12s" repeatCount="indefinite" />
+      </rect>
+
+      <!-- Segment 2 -->
+      <rect x="134" y="0" width="124" height="3.5" rx="2" fill="#1e293b" />
+      <rect x="134" y="0" width="0" height="3.5" rx="2" fill="#a78bfa">
+        <animate attributeName="width" values="0;0;124;124;0" keyTimes="0;0.33;0.63;0.95;1" dur="12s" repeatCount="indefinite" />
+      </rect>
+
+      <!-- Segment 3 -->
+      <rect x="268" y="0" width="124" height="3.5" rx="2" fill="#1e293b" />
+      <rect x="268" y="0" width="0" height="3.5" rx="2" fill="#f472b6">
+        <animate attributeName="width" values="0;0;124;124;0" keyTimes="0;0.66;0.96;0.99;1" dur="12s" repeatCount="indefinite" />
+      </rect>
+    </g>
+
+    <!-- Crossfading Story Slides (3 Rotating Highlights) -->
+    <!-- SLIDE 1: MENTORSHIP AT NARESHIT -->
+    <g transform="translate(24, 40)">
+      <animate attributeName="opacity" values="1;1;0;0;0;0;1" keyTimes="0;0.3;0.33;0.96;0.98;0.99;1" dur="12s" repeatCount="indefinite" />
+      
+      <rect x="0" y="0" width="128" height="20" rx="4" fill="#082f49" stroke="#0284c7" stroke-width="0.8" />
+      <text x="8" y="14" fill="#38bdf8" font-size="9.5" font-weight="700" class="mono">MENTORSHIP // 2026</text>
+      
+      <text x="0" y="44" fill="#f8fafc" font-size="16" font-weight="800" class="sans">Cloud/DevOps Mentor @ NareshIT</text>
+      <text x="0" y="66" fill="#94a3b8" font-size="11.5" class="sans">Guiding students in hands-on AWS architecture, Docker, K8s,</text>
+      <text x="0" y="84" fill="#94a3b8" font-size="11.5" class="sans">Terraform IaC and CI/CD automated pipeline workflows.</text>
+
+      <rect x="0" y="100" width="392" height="30" rx="6" fill="#111827" stroke="#1e293b" stroke-width="0.8" />
+      <text x="12" y="120" fill="#22d3ee" font-size="10.5" font-weight="600" class="mono">🏆 100+ Students Guided • EKS &amp; Terraform Labs</text>
+    </g>
+
+    <!-- SLIDE 2: E-COMMERCE ON AWS EKS -->
+    <g transform="translate(24, 40)">
+      <animate attributeName="opacity" values="0;0;1;1;0;0;0" keyTimes="0;0.31;0.34;0.63;0.66;0.99;1" dur="12s" repeatCount="indefinite" />
+      
+      <rect x="0" y="0" width="144" height="20" rx="4" fill="#2e1065" stroke="#7c3aed" stroke-width="0.8" />
+      <text x="8" y="14" fill="#c084fc" font-size="9.5" font-weight="700" class="mono">FLAGSHIP PROJECT // EKS</text>
+      
+      <text x="0" y="44" fill="#f8fafc" font-size="16" font-weight="800" class="sans">Microservices Platform on AWS EKS</text>
+      <text x="0" y="66" fill="#94a3b8" font-size="11.5" class="sans">Architected 5+ independent microservices using Ingress,</text>
+      <text x="0" y="84" fill="#94a3b8" font-size="11.5" class="sans">Terraform modular VPCs, Amazon RDS, and ArgoCD GitOps.</text>
+
+      <rect x="0" y="100" width="392" height="30" rx="6" fill="#111827" stroke="#1e293b" stroke-width="0.8" />
+      <text x="12" y="120" fill="#a78bfa" font-size="10.5" font-weight="600" class="mono">⚙️ 5+ Microservices • Zero Downtime Helm Sync</text>
+    </g>
+
+    <!-- SLIDE 3: MONITORING & 3-TIER ARCHITECTURE -->
+    <g transform="translate(24, 40)">
+      <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.64;0.67;0.96;0.98;0.99;1" dur="12s" repeatCount="indefinite" />
+      
+      <rect x="0" y="0" width="154" height="20" rx="4" fill="#311425" stroke="#db2777" stroke-width="0.8" />
+      <text x="8" y="14" fill="#f472b6" font-size="9.5" font-weight="700" class="mono">OBSERVABILITY // FULL STACK</text>
+      
+      <text x="0" y="44" fill="#f8fafc" font-size="16" font-weight="800" class="sans">Monitoring &amp; HA Alerting Stack</text>
+      <text x="0" y="66" fill="#94a3b8" font-size="11.5" class="sans">EC2, RDS, ALB, CloudWatch Alarms for real-time spikes,</text>
+      <text x="0" y="84" fill="#94a3b8" font-size="11.5" class="sans">plus interactive Prometheus &amp; Grafana operational dashboards.</text>
+
+      <rect x="0" y="100" width="392" height="30" rx="6" fill="#111827" stroke="#1e293b" stroke-width="0.8" />
+      <text x="12" y="120" fill="#f472b6" font-size="10.5" font-weight="600" class="mono">📈 99.9% Availability • Instant SNS Cloud Alerts</text>
+    </g>
+
+    <!-- ================= DAILY DEVOPS RINGS (BOTTOM SECTION) ================= -->
+    <g transform="translate(24, 195)">
+      <!-- Divider line -->
+      <line x1="0" y1="0" x2="392" y2="0" stroke="#1e293b" stroke-width="1" />
+
+      <text x="0" y="22" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1" class="mono">
+        DAILY DEVOPS TELEMETRY RINGS
+      </text>
+
+      <!-- 3 Concentric Activity Rings (Center at cx=65, cy=82) -->
+      <g transform="translate(70, 85)">
+        <!-- Outer Ring (Cyan - Infrastructure Uptime 99.9%) -->
+        <circle cx="0" cy="0" r="45" fill="none" stroke="#164e63" stroke-width="8" opacity="0.4" />
+        <circle cx="0" cy="0" r="45" fill="none" stroke="url(#ring-cyan)" stroke-width="8" stroke-linecap="round" class="ring-progress-1" transform="rotate(-90)" />
+
+        <!-- Middle Ring (Violet - CI/CD Pipelines 100%) -->
+        <circle cx="0" cy="0" r="33" fill="none" stroke="#3b0764" stroke-width="8" opacity="0.4" />
+        <circle cx="0" cy="0" r="33" fill="none" stroke="url(#ring-violet)" stroke-width="8" stroke-linecap="round" class="ring-progress-2" transform="rotate(-90)" />
+
+        <!-- Inner Ring (Pink - Mentorship & Lab Completion 95%) -->
+        <circle cx="0" cy="0" r="21" fill="none" stroke="#500724" stroke-width="8" opacity="0.4" />
+        <circle cx="0" cy="0" r="21" fill="none" stroke="url(#ring-pink)" stroke-width="8" stroke-linecap="round" class="ring-progress-3" transform="rotate(-90)" />
+
+        <!-- Center Icon -->
+        <text x="0" y="4" text-anchor="middle" font-size="12">⚙️</text>
+      </g>
+
+      <!-- Ring Legends Beside -->
+      <g transform="translate(150, 48)">
+        <!-- Legend 1 -->
+        <circle cx="6" cy="12" r="5" fill="#22d3ee" />
+        <text x="20" y="16" fill="#f8fafc" font-size="11.5" font-weight="600" class="sans">99.9% Uptime Target</text>
+        <text x="20" y="30" fill="#64748b" font-size="9.5" class="mono">AWS HA &amp; Multi-AZ Resiliency</text>
+
+        <!-- Legend 2 -->
+        <circle cx="6" cy="48" r="5" fill="#a78bfa" />
+        <text x="20" y="52" fill="#f8fafc" font-size="11.5" font-weight="600" class="sans">100% Automated Pipelines</text>
+        <text x="20" y="66" fill="#64748b" font-size="9.5" class="mono">GitHub Actions &amp; ArgoCD GitOps</text>
+
+        <!-- Legend 3 -->
+        <circle cx="6" cy="84" r="5" fill="#f472b6" />
+        <text x="20" y="88" fill="#f8fafc" font-size="11.5" font-weight="600" class="sans">Hands-on Mentorship</text>
+        <text x="20" y="102" fill="#64748b" font-size="9.5" class="mono">NareshIT DevOps Cohort Support</text>
+      </g>
+    </g>
+  </g>
+</svg>

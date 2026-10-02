@@ -1,0 +1,344 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="id-aurora" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <linearGradient id="id-card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f111a" />
+      <stop offset="100%" stop-color="#090a10" />
+    </linearGradient>
+
+    <linearGradient id="id-card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.7" />
+    </linearGradient>
+
+    <!-- Holographic Foil Sweep Gradient -->
+    <linearGradient id="holo-sweep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0" />
+      <stop offset="40%" stop-color="#22d3ee" stop-opacity="0.08" />
+      <stop offset="50%" stop-color="#f472b6" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#a78bfa" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Gold Chip Gradient -->
+    <linearGradient id="gold-chip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+
+    <!-- Bar Gradient -->
+    <linearGradient id="bar-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#a78bfa" />
+    </linearGradient>
+
+    <pattern id="id-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#ffffff" fill-opacity="0.04" />
+    </pattern>
+
+    <filter id="soft-glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      /* Holographic foil sweep */
+      @keyframes sweepAnimation {
+        0% { transform: translateX(-240px) translateY(-100px) rotate(25deg); }
+        40%, 100% { transform: translateX(350px) translateY(200px) rotate(25deg); }
+      }
+      .holo-overlay { animation: sweepAnimation 6s ease-in-out infinite; }
+
+      /* Lanyard Swing Physics */
+      @keyframes lanyardSwing {
+        0% { transform: rotate(0deg); }
+        15% { transform: rotate(-3deg); }
+        35% { transform: rotate(2.2deg); }
+        55% { transform: rotate(-1.2deg); }
+        75% { transform: rotate(0.6deg); }
+        90% { transform: rotate(-0.2deg); }
+        100% { transform: rotate(0deg); }
+      }
+      .swing-badge {
+        transform-origin: 150px 0px;
+        animation: lanyardSwing 7s ease-in-out infinite;
+      }
+
+      /* Travelling Light Border */
+      @keyframes travelLight {
+        0% { stroke-dashoffset: 600; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .border-light {
+        stroke-dasharray: 80 520;
+        animation: travelLight 5s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Card Background -->
+  <rect x="2" y="2" width="896" height="416" rx="16" fill="url(#id-card-bg)" stroke="url(#id-card-border)" stroke-width="1.5" />
+  <rect x="2" y="2" width="896" height="416" rx="16" fill="url(#id-dots)" />
+
+  <!-- ================= LEFT: HOLOGRAPHIC LANYARD ID BADGE ================= -->
+  <g class="swing-badge">
+    <!-- Lanyard Strap from Top -->
+    <path d="M 125 0 L 140 50 L 160 50 L 175 0 Z" fill="#1e1b4b" stroke="#312e81" stroke-width="1" />
+    <text x="150" y="26" text-anchor="middle" fill="#818cf8" font-size="6.5" font-weight="800" class="mono" letter-spacing="1">DEVOPS</text>
+    <text x="150" y="38" text-anchor="middle" fill="#c7d2fe" font-size="6" font-weight="700" class="mono">VERIFIED</text>
+
+    <!-- Metallic Clasp & Swivel Hook -->
+    <rect x="142" y="50" width="16" height="14" rx="3" fill="#64748b" stroke="#94a3b8" stroke-width="0.8" />
+    <ellipse cx="150" cy="67" rx="7" ry="5" fill="none" stroke="#94a3b8" stroke-width="2" />
+    
+    <!-- ID Card Body -->
+    <g transform="translate(42, 74)">
+      <!-- Badge Drop Shadow -->
+      <rect x="0" y="0" width="216" height="324" rx="14" fill="#030712" opacity="0.6" transform="translate(4, 6)" />
+
+      <!-- Main ID Badge Case -->
+      <rect x="0" y="0" width="216" height="324" rx="14" fill="#0b0f19" stroke="#1e293b" stroke-width="1.5" />
+
+      <!-- Travelling Light Edge around ID Card -->
+      <rect x="0" y="0" width="216" height="324" rx="14" fill="none" stroke="#22d3ee" stroke-width="2" class="border-light" />
+
+      <!-- Top Lanyard Slot -->
+      <rect x="88" y="8" width="40" height="6" rx="3" fill="#1e293b" stroke="#334155" stroke-width="0.8" />
+
+      <!-- Badge Header -->
+      <g transform="translate(18, 28)">
+        <text x="0" y="0" fill="#22d3ee" font-size="8.5" font-weight="800" class="mono" letter-spacing="1.5">NARESHIT // CREW</text>
+        <circle cx="170" cy="-3" r="3.5" fill="#10b981">
+          <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite" />
+        </circle>
+      </g>
+
+      <!-- Avatar / Portrait Frame -->
+      <g transform="translate(24, 40)">
+        <rect x="0" y="0" width="168" height="106" rx="8" fill="#111827" stroke="#334155" stroke-width="1" />
+        
+        <!-- Cyber Visor / DevOps Portrait Silhouette -->
+        <circle cx="84" cy="46" r="28" fill="#1e293b" />
+        <!-- Head / Visor -->
+        <rect x="64" y="40" width="40" height="12" rx="4" fill="url(#id-aurora)" />
+        <path d="M 46 98 C 46 76 60 70 84 70 C 108 70 122 76 122 98 Z" fill="#1e293b" />
+        
+        <!-- Scanning Target Overlay -->
+        <circle cx="84" cy="48" r="36" fill="none" stroke="#22d3ee" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.6" />
+        <text x="84" y="98" text-anchor="middle" fill="#67e8f9" font-size="7.5" font-weight="700" class="mono">ROOT ACCESS // LVL 4</text>
+      </g>
+
+      <!-- Smart Card Gold Chip -->
+      <g transform="translate(24, 156)">
+        <rect x="0" y="0" width="36" height="26" rx="4" fill="url(#gold-chip)" stroke="#a16207" stroke-width="0.8" />
+        <!-- Circuit Lines -->
+        <line x1="0" y1="13" x2="36" y2="13" stroke="#854d0e" stroke-width="0.8" />
+        <line x1="18" y1="0" x2="18" y2="26" stroke="#854d0e" stroke-width="0.8" />
+        <rect x="10" y="7" width="16" height="12" rx="2" fill="none" stroke="#854d0e" stroke-width="0.8" />
+      </g>
+
+      <!-- Title / Name Info -->
+      <g transform="translate(70, 163)">
+        <text x="0" y="0" fill="#f8fafc" font-size="13" font-weight="900" class="sans" letter-spacing="0.5">GOKUL RATHOD</text>
+        <text x="0" y="14" fill="#a78bfa" font-size="8.5" font-weight="700" class="mono">CLOUD &amp; DEVOPS ENG.</text>
+      </g>
+
+      <!-- Role / Organization Details -->
+      <g transform="translate(24, 198)">
+        <text x="0" y="0" fill="#64748b" font-size="7.5" class="mono">ASSIGNMENT:</text>
+        <text x="0" y="11" fill="#cbd5e1" font-size="9" font-weight="600" class="sans">Mentor @ NareshIT Technologies</text>
+
+        <text x="0" y="27" fill="#64748b" font-size="7.5" class="mono">LOCATION:</text>
+        <text x="0" y="38" fill="#cbd5e1" font-size="9" font-weight="600" class="sans">Hyderabad, India</text>
+
+        <text x="0" y="54" fill="#64748b" font-size="7.5" class="mono">SPECIALIZATION:</text>
+        <text x="0" y="65" fill="#38bdf8" font-size="9" font-weight="700" class="mono">AWS • K8s • IaC • GitOps</text>
+      </g>
+
+      <!-- Barcode & Serial -->
+      <g transform="translate(24, 278)">
+        <!-- Barcode lines -->
+        <line x1="0" y1="0" x2="0" y2="20" stroke="#f8fafc" stroke-width="2" />
+        <line x1="4" y1="0" x2="4" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="8" y1="0" x2="8" y2="20" stroke="#f8fafc" stroke-width="3" />
+        <line x1="14" y1="0" x2="14" y2="20" stroke="#f8fafc" stroke-width="1.5" />
+        <line x1="19" y1="0" x2="19" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="24" y1="0" x2="24" y2="20" stroke="#f8fafc" stroke-width="2.5" />
+        <line x1="30" y1="0" x2="30" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="34" y1="0" x2="34" y2="20" stroke="#f8fafc" stroke-width="3" />
+        <line x1="41" y1="0" x2="41" y2="20" stroke="#f8fafc" stroke-width="1.5" />
+        <line x1="46" y1="0" x2="46" y2="20" stroke="#f8fafc" stroke-width="2" />
+        <line x1="52" y1="0" x2="52" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="56" y1="0" x2="56" y2="20" stroke="#f8fafc" stroke-width="3" />
+        <line x1="63" y1="0" x2="63" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="68" y1="0" x2="68" y2="20" stroke="#f8fafc" stroke-width="2.5" />
+        <line x1="75" y1="0" x2="75" y2="20" stroke="#f8fafc" stroke-width="1.5" />
+        <line x1="80" y1="0" x2="80" y2="20" stroke="#f8fafc" stroke-width="2" />
+        <line x1="85" y1="0" x2="85" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="90" y1="0" x2="90" y2="20" stroke="#f8fafc" stroke-width="3" />
+        <line x1="96" y1="0" x2="96" y2="20" stroke="#f8fafc" stroke-width="1.5" />
+        <line x1="102" y1="0" x2="102" y2="20" stroke="#f8fafc" stroke-width="2" />
+        <line x1="108" y1="0" x2="108" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="114" y1="0" x2="114" y2="20" stroke="#f8fafc" stroke-width="2.5" />
+        <line x1="120" y1="0" x2="120" y2="20" stroke="#f8fafc" stroke-width="1.5" />
+        <line x1="126" y1="0" x2="126" y2="20" stroke="#f8fafc" stroke-width="3" />
+        <line x1="134" y1="0" x2="134" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="140" y1="0" x2="140" y2="20" stroke="#f8fafc" stroke-width="2" />
+        <line x1="146" y1="0" x2="146" y2="20" stroke="#f8fafc" stroke-width="2.5" />
+        <line x1="154" y1="0" x2="154" y2="20" stroke="#f8fafc" stroke-width="1" />
+        <line x1="160" y1="0" x2="160" y2="20" stroke="#f8fafc" stroke-width="2" />
+        <line x1="166" y1="0" x2="166" y2="20" stroke="#f8fafc" stroke-width="3" />
+
+        <text x="0" y="32" fill="#64748b" font-size="7.5" class="mono">SN: 9356-7823-22 // GR-AUTH-OK</text>
+      </g>
+
+      <!-- Holographic Foil Sweep Sheen Overlay -->
+      <g clip-path="url(#badge-clip)">
+        <clipPath id="badge-clip">
+          <rect x="0" y="0" width="216" height="324" rx="14" />
+        </clipPath>
+        <rect x="0" y="0" width="120" height="400" fill="url(#holo-sweep)" class="holo-overlay" />
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT: TELEMETRY DASHBOARD ================= -->
+  <g transform="translate(290, 28)">
+    <!-- Dashboard Header -->
+    <g transform="translate(0, 0)">
+      <circle cx="6" cy="6" r="4.5" fill="#10b981">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+      <text x="18" y="10" fill="url(#id-aurora)" font-size="16" font-weight="900" class="sans" letter-spacing="1">
+        DEVOPS TELEMETRY &amp; LIVE BENCHMARKS
+      </text>
+      <text x="440" y="10" text-anchor="end" fill="#64748b" font-size="10.5" class="mono">REFRESH: LIVE // 2026</text>
+    </g>
+
+    <!-- 4 KPI TILES -->
+    <g transform="translate(0, 24)">
+      <!-- Tile 1: Uptime -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="134" height="66" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
+        <text x="14" y="28" fill="#22d3ee" font-size="20" font-weight="900" class="mono">99.9%</text>
+        <text x="14" y="48" fill="#94a3b8" font-size="10" font-weight="600" class="sans">Target Uptime SLA</text>
+      </g>
+
+      <!-- Tile 2: Microservices -->
+      <g transform="translate(144, 0)">
+        <rect x="0" y="0" width="134" height="66" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
+        <text x="14" y="28" fill="#a78bfa" font-size="20" font-weight="900" class="mono">5+</text>
+        <text x="14" y="48" fill="#94a3b8" font-size="10" font-weight="600" class="sans">EKS Microservices</text>
+      </g>
+
+      <!-- Tile 3: Students Mentored -->
+      <g transform="translate(288, 0)">
+        <rect x="0" y="0" width="134" height="66" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
+        <text x="14" y="28" fill="#f472b6" font-size="20" font-weight="900" class="mono">100+</text>
+        <text x="14" y="48" fill="#94a3b8" font-size="10" font-weight="600" class="sans">Students Mentored</text>
+      </g>
+
+      <!-- Tile 4: IaC Coverage -->
+      <g transform="translate(432, 0)">
+        <rect x="0" y="0" width="144" height="66" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
+        <text x="14" y="28" fill="#38bdf8" font-size="20" font-weight="900" class="mono">100%</text>
+        <text x="14" y="48" fill="#94a3b8" font-size="10" font-weight="600" class="sans">Terraform IaC</text>
+      </g>
+    </g>
+
+    <!-- BAR CHART: PROJECT ARCHITECTURE & EXPERTISE -->
+    <g transform="translate(0, 108)">
+      <rect x="0" y="0" width="576" height="182" rx="10" fill="#0b0f19" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="22" fill="#e2e8f0" font-size="11.5" font-weight="700" class="sans">
+        PRODUCTION ARCHITECTURE DOMAINS
+      </text>
+      <text x="560" y="22" text-anchor="end" fill="#64748b" font-size="10" class="mono">MASTERY BENCHMARK</text>
+
+      <!-- Bar 1: AWS EKS & Microservices -->
+      <g transform="translate(16, 36)">
+        <text x="0" y="10" fill="#94a3b8" font-size="10.5" class="mono">AWS EKS &amp; Microservices</text>
+        <text x="544" y="10" text-anchor="end" fill="#38bdf8" font-size="10" font-weight="700" class="mono">96%</text>
+        <!-- Track -->
+        <rect x="0" y="16" width="544" height="8" rx="4" fill="#1e293b" />
+        <!-- Value Bar -->
+        <rect x="0" y="16" width="522" height="8" rx="4" fill="url(#bar-grad)">
+          <animate attributeName="width" values="0;522" dur="1.5s" fill="freeze" />
+        </rect>
+      </g>
+
+      <!-- Bar 2: Terraform IaC & Modular Cloud -->
+      <g transform="translate(16, 64)">
+        <text x="0" y="10" fill="#94a3b8" font-size="10.5" class="mono">Terraform IaC &amp; Multi-Tier VPC</text>
+        <text x="544" y="10" text-anchor="end" fill="#38bdf8" font-size="10" font-weight="700" class="mono">93%</text>
+        <rect x="0" y="16" width="544" height="8" rx="4" fill="#1e293b" />
+        <rect x="0" y="16" width="505" height="8" rx="4" fill="url(#bar-grad)">
+          <animate attributeName="width" values="0;505" dur="1.5s" fill="freeze" />
+        </rect>
+      </g>
+
+      <!-- Bar 3: GitOps, ArgoCD & Helm -->
+      <g transform="translate(16, 92)">
+        <text x="0" y="10" fill="#94a3b8" font-size="10.5" class="mono">GitOps Delivery (ArgoCD + Helm)</text>
+        <text x="544" y="10" text-anchor="end" fill="#38bdf8" font-size="10" font-weight="700" class="mono">90%</text>
+        <rect x="0" y="16" width="544" height="8" rx="4" fill="#1e293b" />
+        <rect x="0" y="16" width="489" height="8" rx="4" fill="url(#bar-grad)">
+          <animate attributeName="width" values="0;489" dur="1.5s" fill="freeze" />
+        </rect>
+      </g>
+
+      <!-- Bar 4: CI/CD Automation (GitHub Actions / Jenkins) -->
+      <g transform="translate(16, 120)">
+        <text x="0" y="10" fill="#94a3b8" font-size="10.5" class="mono">CI/CD Pipelines (GitHub Actions / Jenkins)</text>
+        <text x="544" y="10" text-anchor="end" fill="#38bdf8" font-size="10" font-weight="700" class="mono">92%</text>
+        <rect x="0" y="16" width="544" height="8" rx="4" fill="#1e293b" />
+        <rect x="0" y="16" width="500" height="8" rx="4" fill="url(#bar-grad)">
+          <animate attributeName="width" values="0;500" dur="1.5s" fill="freeze" />
+        </rect>
+      </g>
+
+      <!-- Bar 5: Observability (Prometheus, Grafana, CloudWatch) -->
+      <g transform="translate(16, 148)">
+        <text x="0" y="10" fill="#94a3b8" font-size="10.5" class="mono">Monitoring (Prometheus, Grafana &amp; CloudWatch)</text>
+        <text x="544" y="10" text-anchor="end" fill="#38bdf8" font-size="10" font-weight="700" class="mono">88%</text>
+        <rect x="0" y="16" width="544" height="8" rx="4" fill="#1e293b" />
+        <rect x="0" y="16" width="478" height="8" rx="4" fill="url(#bar-grad)">
+          <animate attributeName="width" values="0;478" dur="1.5s" fill="freeze" />
+        </rect>
+      </g>
+    </g>
+
+    <!-- "NOW" PANEL -->
+    <g transform="translate(0, 302)">
+      <rect x="0" y="0" width="576" height="62" rx="10" fill="#111827" stroke="#334155" stroke-width="1" />
+      <g transform="translate(16, 16)">
+        <rect x="0" y="0" width="54" height="18" rx="4" fill="#052e16" stroke="#16a34a" stroke-width="0.8" />
+        <circle cx="8" cy="9" r="3.5" fill="#22c55e">
+          <animate attributeName="opacity" values="1;0.4;1" dur="1.2s" repeatCount="indefinite" />
+        </circle>
+        <text x="16" y="12.5" fill="#4ade80" font-size="9" font-weight="800" class="mono">NOW</text>
+
+        <text x="64" y="14" fill="#f8fafc" font-size="12" font-weight="700" class="sans">
+          Mentoring @ NareshIT Technologies &amp; Architecting Cloud-Native Systems
+        </text>
+        <text x="0" y="34" fill="#94a3b8" font-size="11" class="sans">
+          Actively building automated GitOps on AWS EKS • Ready for Full-Time Cloud &amp; DevOps roles!
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

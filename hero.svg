@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="100%" height="100%">
+  <defs>
+    <!-- Aurora Linear Gradients -->
+    <linearGradient id="hero-aurora" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <linearGradient id="hero-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d0e17" />
+      <stop offset="100%" stop-color="#07080d" />
+    </linearGradient>
+
+    <linearGradient id="hero-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.8" />
+      <stop offset="35%" stop-color="#a78bfa" stop-opacity="0.3" />
+      <stop offset="70%" stop-color="#f472b6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.4" />
+    </linearGradient>
+
+    <linearGradient id="hero-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.3" />
+    </linearGradient>
+
+    <linearGradient id="badge-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Subtle Dot Grid Texture -->
+    <pattern id="hero-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#ffffff" fill-opacity="0.05" />
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="hero-glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'SF Pro Text', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      
+      /* Camera Frame Drawing */
+      @keyframes cornerPulse {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 0.35; }
+      }
+      .viewfinder-corner { animation: cornerPulse 4s ease-in-out infinite; }
+
+      /* Neon Pulse */
+      @keyframes pulseGlow {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.08); opacity: 0.4; }
+      }
+      .pulse-beacon { transform-origin: center; animation: pulseGlow 2.5s ease-in-out infinite; }
+      
+      /* Scrubber animation */
+      @keyframes scrubMove {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(180px); }
+      }
+      .scrubber-head { animation: scrubMove 4s linear infinite; }
+
+      /* Cloud Node Rotation */
+      @keyframes orbitClockwise {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes orbitCounter {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      .orbit-ring-1 { transform-origin: 710px 180px; animation: orbitClockwise 25s linear infinite; }
+      .orbit-ring-2 { transform-origin: 710px 180px; animation: orbitCounter 35s linear infinite; }
+      .float-node {
+        animation: floatItem 3.6s ease-in-out infinite alternate;
+      }
+      @keyframes floatItem {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-7px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Card -->
+  <rect x="2" y="2" width="896" height="356" rx="16" fill="url(#hero-bg)" stroke="url(#hero-border)" stroke-width="1.5" />
+  <rect x="2" y="2" width="896" height="356" rx="16" fill="url(#hero-dots)" />
+
+  <!-- Ambient Aurora Backlight Blobs -->
+  <circle cx="120" cy="80" r="140" fill="#22d3ee" fill-opacity="0.07" filter="url(#hero-glow-filter)" />
+  <circle cx="720" cy="180" r="180" fill="#a78bfa" fill-opacity="0.09" filter="url(#hero-glow-filter)" />
+  <circle cx="850" cy="300" r="130" fill="#f472b6" fill-opacity="0.06" filter="url(#hero-glow-filter)" />
+
+  <!-- ================= CAMERA VIEWFINDER HUD ================= -->
+  <!-- Top Left: Recording Status -->
+  <g transform="translate(30, 24)">
+    <circle cx="8" cy="8" r="5" fill="#f43f5e" class="pulse-beacon">
+      <animate attributeName="opacity" values="1;0.25;1" dur="1.2s" repeatCount="indefinite" />
+    </circle>
+    <text x="22" y="12" fill="#e2e8f0" font-size="11" font-weight="700" letter-spacing="1.5" class="mono">REC ● LIVE</text>
+    <text x="130" y="12" fill="#64748b" font-size="11" class="mono">// GOKUL_RATHOD.DEV</text>
+  </g>
+
+  <!-- Top Right: Telemetry / Camera specs -->
+  <g transform="translate(640, 24)">
+    <rect x="0" y="0" width="230" height="20" rx="4" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="0.8" />
+    <text x="12" y="14" fill="#38bdf8" font-size="10" font-weight="600" class="mono">AWS-EKS</text>
+    <text x="80" y="14" fill="#64748b" font-size="10" class="mono">|</text>
+    <text x="96" y="14" fill="#a78bfa" font-size="10" font-weight="600" class="mono">TERRAFORM</text>
+    <text x="175" y="14" fill="#64748b" font-size="10" class="mono">|</text>
+    <text x="190" y="14" fill="#10b981" font-size="10" font-weight="700" class="mono">60FPS</text>
+  </g>
+
+  <!-- Viewfinder Corner Brackets -->
+  <g class="viewfinder-corner" stroke="#22d3ee" stroke-width="1.8" fill="none">
+    <!-- Top Left -->
+    <path d="M 24 45 L 24 24 L 45 24" />
+    <!-- Top Right -->
+    <path d="M 876 45 L 876 24 L 855 24" />
+    <!-- Bottom Left -->
+    <path d="M 24 315 L 24 336 L 45 336" />
+    <!-- Bottom Right -->
+    <path d="M 876 315 L 876 336 L 855 336" />
+  </g>
+
+  <!-- ================= HERO CONTENT (LEFT SIDE) ================= -->
+  <!-- Status Badge: Open to collabs -->
+  <g transform="translate(48, 62)">
+    <rect x="0" y="0" width="270" height="26" rx="13" fill="#0f172a" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="14" cy="13" r="4.5" fill="#10b981">
+      <animate attributeName="r" values="3.5;5;3.5" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="27" y="17" fill="#67e8f9" font-size="10.5" font-weight="700" letter-spacing="0.8" class="mono">OPEN TO COLLABS &amp; CLOUD ROLES</text>
+  </g>
+
+  <!-- Typed Greeting -->
+  <text x="48" y="118" fill="#94a3b8" font-size="17" font-weight="500" class="sans" letter-spacing="0.5">
+    Hi there, I'm
+  </text>
+
+  <!-- Giant Gradient Name -->
+  <text x="48" y="166" fill="url(#hero-aurora)" font-size="44" font-weight="900" class="sans" letter-spacing="1">
+    GOKUL RATHOD
+  </text>
+
+  <!-- Animated Cycling Roles (4 States, SMIL Keyframes) -->
+  <g transform="translate(48, 192)">
+    <!-- Terminal Prompt Symbol -->
+    <text x="0" y="18" fill="#22d3ee" font-size="20" font-weight="800" class="mono">&gt;</text>
+    
+    <!-- Role 1: Cloud & DevOps Engineer -->
+    <text x="22" y="18" fill="#f8fafc" font-size="19" font-weight="600" class="mono">
+      Cloud Engineer | DevOps Engineer
+      <animate attributeName="opacity" values="1;1;0;0;0;0;0;0;1" keyTimes="0;0.22;0.25;0.5;0.72;0.75;0.97;0.99;1" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="transform" type="translate" values="0,0; 0,0; 0,-5; 0,5; 0,5; 0,5; 0,5; 0,0; 0,0" keyTimes="0;0.22;0.25;0.5;0.72;0.75;0.97;0.99;1" dur="12s" repeatCount="indefinite" />
+    </text>
+
+    <!-- Role 2: AWS Infrastructure Specialist -->
+    <text x="22" y="18" fill="#f8fafc" font-size="19" font-weight="600" class="mono">
+      AWS Solutions &amp; IaC Specialist
+      <animate attributeName="opacity" values="0;0;1;1;0;0;0;0;0" keyTimes="0;0.24;0.27;0.47;0.5;0.75;0.97;0.99;1" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="transform" type="translate" values="0,5; 0,5; 0,0; 0,0; 0,-5; 0,5; 0,5; 0,5; 0,5" keyTimes="0;0.24;0.27;0.47;0.5;0.75;0.97;0.99;1" dur="12s" repeatCount="indefinite" />
+    </text>
+
+    <!-- Role 3: Kubernetes & GitOps Orchestration -->
+    <text x="22" y="18" fill="#f8fafc" font-size="19" font-weight="600" class="mono">
+      Kubernetes &amp; GitOps Orchestration
+      <animate attributeName="opacity" values="0;0;0;0;1;1;0;0;0" keyTimes="0;0.24;0.49;0.52;0.72;0.75;0.97;0.99;1" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="transform" type="translate" values="0,5; 0,5; 0,5; 0,5; 0,0; 0,0; 0,-5; 0,5; 0,5" keyTimes="0;0.24;0.49;0.52;0.72;0.75;0.97;0.99;1" dur="12s" repeatCount="indefinite" />
+    </text>
+
+    <!-- Role 4: Cloud/DevOps Mentor @ NareshIT -->
+    <text x="22" y="18" fill="#f8fafc" font-size="19" font-weight="600" class="mono">
+      Cloud/DevOps Mentor @ NareshIT
+      <animate attributeName="opacity" values="0;0;0;0;0;0;1;1;0" keyTimes="0;0.24;0.49;0.74;0.77;0.96;0.98;1;1" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="transform" type="translate" values="0,5; 0,5; 0,5; 0,5; 0,5; 0,5; 0,0; 0,0; 0,-5" keyTimes="0;0.24;0.49;0.74;0.77;0.96;0.98;1;1" dur="12s" repeatCount="indefinite" />
+    </text>
+
+    <!-- Terminal Cursor -->
+    <rect x="445" y="4" width="9" height="18" fill="#22d3ee">
+      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- One-Line Pitch -->
+  <text x="48" y="244" fill="#cbd5e1" font-size="13.5" font-weight="400" class="sans" line-height="1.5">
+    Architecting robust cloud-native systems, automated CI/CD pipelines, and declarative GitOps on AWS.
+  </text>
+  <text x="48" y="264" fill="#94a3b8" font-size="12.5" font-weight="400" class="sans">
+    Passionate about high-availability infrastructure, Terraform automation, and mentoring future DevOps engineers.
+  </text>
+
+  <!-- Meta Info Row (Location, Company, Core Stack) -->
+  <g transform="translate(48, 290)">
+    <!-- Location Pill -->
+    <rect x="0" y="0" width="168" height="28" rx="7" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="0.8" />
+    <text x="10" y="18" font-size="11">📍</text>
+    <text x="26" y="18" fill="#e2e8f0" font-size="11" font-weight="500" class="sans">Hyderabad, India</text>
+
+    <!-- Mentor Pill -->
+    <rect x="178" y="0" width="186" height="28" rx="7" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="0.8" />
+    <text x="188" y="18" font-size="11">👨‍🏫</text>
+    <text x="206" y="18" fill="#e2e8f0" font-size="11" font-weight="500" class="sans">Mentor @ NareshIT</text>
+
+    <!-- Stack Pill -->
+    <rect x="374" y="0" width="162" height="28" rx="7" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="0.8" />
+    <text x="384" y="18" font-size="11">⚡</text>
+    <text x="402" y="18" fill="#38bdf8" font-size="11" font-weight="600" class="mono">AWS • K8s • GitOps</text>
+  </g>
+
+  <!-- ================= RIGHT SIDE: CLOUD / DEVOPS CYBER NODE ================= -->
+  <g transform="translate(710, 180)">
+    <!-- Outer Orbital Ring 1 (Tilted Clockwise) -->
+    <ellipse cx="0" cy="0" rx="125" ry="58" fill="none" stroke="#22d3ee" stroke-width="1.2" stroke-dasharray="8 6" stroke-opacity="0.45" class="orbit-ring-1" />
+    
+    <!-- Outer Orbital Ring 2 (Counter Clockwise) -->
+    <ellipse cx="0" cy="0" rx="135" ry="64" fill="none" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4 8" stroke-opacity="0.35" class="orbit-ring-2" transform="rotate(-35)" />
+
+    <!-- Glow backdrop behind core -->
+    <circle cx="0" cy="0" r="58" fill="#0f172a" stroke="url(#hero-aurora)" stroke-width="2" filter="url(#soft-glow)" />
+
+    <!-- Isometric Cloud Core Server Frame -->
+    <g class="float-node">
+      <!-- Hexagonal Cloud Node -->
+      <polygon points="0,-42 36,-21 36,21 0,42 -36,21 -36,-21" fill="#111827" stroke="#38bdf8" stroke-width="1.5" />
+      
+      <!-- Inner Cloud Graphic -->
+      <path d="M -16 6 A 8 8 0 0 1 -14 -8 A 12 12 0 0 1 12 -8 A 9 9 0 0 1 18 6 Z" fill="none" stroke="url(#hero-aurora)" stroke-width="2.2" stroke-linejoin="round" />
+      <text x="0" y="18" text-anchor="middle" fill="#f8fafc" font-size="8.5" font-weight="800" class="mono" letter-spacing="1">AWS EKS</text>
+    </g>
+
+    <!-- Satellite Floating Tech Nodes -->
+    <!-- Satellite 1: Docker (Top Left) -->
+    <g transform="translate(-86, -62)" class="float-node">
+      <rect x="-24" y="-13" width="48" height="26" rx="6" fill="#0e2338" stroke="#38bdf8" stroke-width="1" />
+      <text x="0" y="4" text-anchor="middle" fill="#38bdf8" font-size="9" font-weight="700" class="mono">Docker</text>
+    </g>
+
+    <!-- Satellite 2: Kubernetes (Top Right) -->
+    <g transform="translate(84, -58)" class="float-node">
+      <rect x="-22" y="-13" width="44" height="26" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1" />
+      <text x="0" y="4" text-anchor="middle" fill="#a5b4fc" font-size="9" font-weight="700" class="mono">K8s</text>
+    </g>
+
+    <!-- Satellite 3: Terraform (Bottom Left) -->
+    <g transform="translate(-94, 52)" class="float-node">
+      <rect x="-25" y="-13" width="50" height="26" rx="6" fill="#2e1065" stroke="#c084fc" stroke-width="1" />
+      <text x="0" y="4" text-anchor="middle" fill="#d8b4fe" font-size="9" font-weight="700" class="mono">Terraform</text>
+    </g>
+
+    <!-- Satellite 4: ArgoCD (Bottom Right) -->
+    <g transform="translate(86, 56)" class="float-node">
+      <rect x="-25" y="-13" width="50" height="26" rx="6" fill="#311425" stroke="#f472b6" stroke-width="1" />
+      <text x="0" y="4" text-anchor="middle" fill="#f472b6" font-size="9" font-weight="700" class="mono">ArgoCD</text>
+    </g>
+
+    <!-- Pulse Signal Wave -->
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#22d3ee" stroke-width="1.2" opacity="0.6">
+      <animate attributeName="r" values="25;75" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- ================= BOTTOM SCRUBBER & TIMECODE ================= -->
+  <g transform="translate(48, 336)">
+    <!-- Scrubber track -->
+    <line x1="0" y1="0" x2="804" y2="0" stroke="#1e293b" stroke-width="2" />
+    
+    <!-- Active playhead progress bar -->
+    <line x1="0" y1="0" x2="240" y2="0" stroke="url(#hero-aurora)" stroke-width="2">
+      <animate attributeName="x2" values="0; 804" dur="8s" repeatCount="indefinite" />
+    </line>
+
+    <!-- Small Scrubber Diamond -->
+    <polygon points="-4,-4 0,-7 4,-4 0,-1" fill="#22d3ee">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 804,0" dur="8s" repeatCount="indefinite" />
+    </polygon>
+
+    <!-- Timecode display -->
+    <text x="804" y="-8" text-anchor="end" fill="#64748b" font-size="9.5" class="mono">00:02:18:04 // TC-STABLE</text>
+  </g>
+</svg>
