@@ -9,7 +9,7 @@
 <br/>
 
 [![GitHub](https://img.shields.io/badge/GitHub-g2rindian2005--cyber-181717?style=for-the-badge&logo=github)](https://github.com/g2rindian2005-cyber)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Gokul%20Rathod-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/gokul-rathod)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Gokul%20Rathod-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/gokul-rathod-3325072b9)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-6366F1?style=for-the-badge&logo=vercel)](https://github.com/g2rindian2005-cyber)
 [![Location](https://img.shields.io/badge/Location-Hyderabad%2C%20India-22D3EE?style=for-the-badge&logo=googlemaps&logoColor=white)](https://maps.google.com/?q=Hyderabad,India)
 [![Status](https://img.shields.io/badge/Status-Open%20to%20Opportunities-22C55E?style=for-the-badge&logo=statuspage&logoColor=white)]()
